@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 import UserPannel from "../../Assets/Svgs/UserPanel";
 import Exit from "../../Assets/Svgs/Exit";
@@ -60,12 +60,14 @@ export default () => {
               </p>
               <Exit />
             </div>
-            <div className="hidden md:flex w-fit px-2 h-9 bg-[#2e3a3f] rounded drop-shadow-lg cursor-pointer  justify-center items-center mr-2 mt-2.5">
-              <p dir="rtl" className="text-[0.6rem] text-[#c2c2c2] mr-2">
-                پروفایل من
-              </p>
-              <UserPannel />
-            </div>
+            <Link to={`edituser/${userData._id}`}>
+              <div className="hidden md:flex w-fit px-2 h-9 bg-[#2e3a3f] rounded drop-shadow-lg cursor-pointer  justify-center items-center mr-2 mt-2.5">
+                <p dir="rtl" className="text-[0.6rem] text-[#c2c2c2] mr-2">
+                  ویرایش پروفایل
+                </p>
+                <UserPannel />
+              </div>
+            </Link>
             <div className="flex w-fit px-2 h-9 bg-[#2e3a3f] rounded drop-shadow-lg  justify-center items-center md:mt-2.5">
               <p dir="rtl" className="text-[0.6rem] text-[#c2c2c2]">
                 {day + " " + month + " " + year}
@@ -91,7 +93,7 @@ export default () => {
             </div>
             <img
               src={userData.imgurl}
-              className="h-[45px] drop-shadow-lg mt-[-5px] md:h-[65px] rounded-full"
+              className="h-[45px] w-[45px] object-cover drop-shadow-lg mt-[-5px] md:h-[65px] md:w-[65px] rounded-full"
             />
           </div>
         </section>

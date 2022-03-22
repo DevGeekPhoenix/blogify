@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import { Component } from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
 export default class AsNavFor extends Component {
@@ -7,10 +8,14 @@ export default class AsNavFor extends Component {
     this.state = {
       nav1: null,
       nav2: null,
+      blogData: [],
     };
   }
 
   componentDidMount() {
+    fetch("http://localhost:4000/blog")
+      .then((res) => res.json())
+      .then((data) => this.setState({ blogData: data }));
     this.setState({
       nav1: this.slider1,
       nav2: this.slider2,
@@ -18,6 +23,7 @@ export default class AsNavFor extends Component {
   }
 
   render() {
+    console.log(this.state.blogData[0]);
     return (
       <div className="md:hidden w-[100%] relative  ">
         <section className="    ">
@@ -31,12 +37,58 @@ export default class AsNavFor extends Component {
             asNavFor={this.state.nav2}
             ref={(slider) => (this.slider1 = slider)}
           >
-            <div className="w-screen h-[98.5vh] bg-red-300"></div>
-            <div className="w-screen h-[98.5vh] bg-green-300"></div>
-            <div className="w-screen h-[98.5vh] bg-blue-300"></div>
-            <div className="w-screen h-[98.5vh] bg-gray-300"></div>
-            <div className="w-screen h-[98.5vh] bg-indigo-500"></div>
-            <div className="w-screen h-[98.5vh] bg-yellow-300"></div>
+            <div className="">
+              <div className="absolute  mt-[-100px] w-screen h-full flex justify-center items-center">
+                <Link to={`/blog/${this.state.blogData[0]?._id}`}>
+                  <p className="text-center card-shadow text-[1.3rem] text-[#fff] rounded-xl w-[60vw]    backdrop-blur-lg p-5 dana">
+                    {this.state.blogData[0]?.title}
+                  </p>
+                </Link>
+              </div>
+              <img
+                className="w-screen h-[98.5vh] object-cover"
+                src={this.state.blogData[0]?.imgurl}
+              />
+            </div>
+            <div className="">
+              <div className="absolute mt-[-100px] w-screen h-full flex justify-center items-center">
+                <Link to={`/blog/${this.state.blogData[1]?._id}`}>
+                  <p className="text-center card-shadow text-[1.3rem] text-[#fff] rounded-xl w-[60vw]  backdrop-blur-lg p-5 dana">
+                    {this.state.blogData[1]?.title}
+                  </p>
+                </Link>
+              </div>
+              <img
+                className="w-screen h-[98.5vh] object-cover"
+                src={this.state.blogData[1]?.imgurl}
+              />
+            </div>
+            <div className="">
+              <div className="absolute mt-[-100px] w-screen h-full flex justify-center items-center">
+                <Link to={`/blog/${this.state.blogData[2]?._id}`}>
+                  <p className="text-center card-shadow text-[1.3rem] text-[#fff] rounded-xl w-[60vw]   backdrop-blur-lg p-5 dana">
+                    {this.state.blogData[2]?.title}
+                  </p>
+                </Link>
+              </div>
+              <img
+                className="w-screen h-[98.5vh] object-cover"
+                src={this.state.blogData[2]?.imgurl}
+              />
+            </div>
+            <div className="">
+              <div className="absolute mt-[-100px] w-screen h-full flex justify-center items-center">
+                <Link to={`/blog/${this.state.blogData[3]?._id}`}>
+                  <p className="text-center card-shadow text-[1.3rem] text-[#fff] rounded-xl w-[60vw]   backdrop-blur-lg p-5 dana">
+                    {this.state.blogData[3]?.title}
+                  </p>
+                </Link>
+              </div>
+              <img
+                className="w-screen h-[98.5vh] object-cover"
+                src={this.state.blogData[3]?.imgurl}
+              />
+            </div>
           </Slider>
         </section>
 
@@ -74,7 +126,7 @@ export default class AsNavFor extends Component {
                 breakpoint: 600,
                 settings: {
                   slidesToShow: 3,
-                  slidesToScroll: 3,
+                  slidesToScroll: 1,
                 },
               },
               {
@@ -86,36 +138,101 @@ export default class AsNavFor extends Component {
               },
             ]}
           >
-            <div className="h-40">
-              <div className="bg-red-300 h-32 w-[90%] drop-shadow-xl mx-1 rounded-lg">
-                <p className="text-10">ضرابی</p>
+            <Link to={`/blog/${this.state.blogData[0]?._id}`}>
+              <div className="h-40">
+                <div
+                  dir="rtl"
+                  className="relative h-32 w-[90%] drop-shadow-xl mx-1 "
+                >
+                  <div className="card-shadow rounded-lg absolute z-10 w-full h-full"></div>
+                  <img
+                    className="w-full h-full object-cover blur-[1px] rounded-lg "
+                    src={this.state.blogData[0]?.imgurl}
+                  />
+                  <div className="absolute z-20 mt-[-75px] mr-2 ">
+                    <img
+                      className="w-[45px] h-[45px] object-cover rounded-full"
+                      src={this.state.blogData[0]?.creator.imgurl}
+                    />
+                    <p className="text-[#fff] text-[0.6rem] text-right">
+                      نویسنده : {this.state.blogData[0]?.creator.name}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="h-40">
-              <div className="bg-green-300 h-32 w-[90%] drop-shadow-xl mx-1 rounded-lg">
-                6845
+            </Link>
+
+            <Link to={`/blog/${this.state.blogData[1]?._id}`}>
+              <div className="h-40">
+                <div
+                  dir="rtl"
+                  className="relative h-32 w-[90%] drop-shadow-xl mx-1 "
+                >
+                  <div className="card-shadow rounded-lg absolute z-10 w-full h-full"></div>
+                  <img
+                    className="w-full h-full object-cover blur-[1px] rounded-lg "
+                    src={this.state.blogData[1]?.imgurl}
+                  />
+                  <div className="absolute z-20 mt-[-75px] mr-2 ">
+                    <img
+                      className="w-[45px] h-[45px] object-cover rounded-full"
+                      src={this.state.blogData[1]?.creator.imgurl}
+                    />
+                    <p className="text-[#fff] text-[0.6rem] text-right">
+                      نویسنده : {this.state.blogData[1]?.creator.name}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="h-40">
-              <div className="bg-blue-300 h-32 w-[90%] drop-shadow-xl mx-1 rounded-lg">
-                6845
+            </Link>
+
+            <Link to={`/blog/${this.state.blogData[2]?._id}`}>
+              <div className="h-40">
+                <div
+                  dir="rtl"
+                  className="relative h-32 w-[90%] drop-shadow-xl mx-1 "
+                >
+                  <div className="card-shadow rounded-lg absolute z-10 w-full h-full"></div>
+                  <img
+                    className="w-full h-full object-cover blur-[1px] rounded-lg "
+                    src={this.state.blogData[2]?.imgurl}
+                  />
+                  <div className="absolute z-20 mt-[-75px] mr-2 ">
+                    <img
+                      className="w-[45px] h-[45px] object-cover rounded-full"
+                      src={this.state.blogData[2]?.creator.imgurl}
+                    />
+                    <p className="text-[#fff] text-[0.6rem] text-right">
+                      نویسنده : {this.state.blogData[2]?.creator.name}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="h-40">
-              <div className="bg-gray-300 h-32 w-[90%] drop-shadow-xl mx-1 rounded-lg">
-                6845
+            </Link>
+
+            <Link to={`/blog/${this.state.blogData[3]?._id}`}>
+              <div className="h-40">
+                <div
+                  dir="rtl"
+                  className="relative h-32 w-[90%] drop-shadow-xl mx-1 "
+                >
+                  <div className="card-shadow rounded-lg absolute z-10 w-full h-full"></div>
+                  <img
+                    className="w-full h-full object-cover blur-[1px] rounded-lg "
+                    src={this.state.blogData[3]?.imgurl}
+                  />
+                  <div className="absolute z-20 mt-[-75px] mr-2 ">
+                    <img
+                      className="w-[45px] h-[45px] object-cover rounded-full"
+                      src={this.state.blogData[3]?.creator.imgurl}
+                    />
+                    <p className="text-[#fff] text-[0.6rem] text-right">
+                      نویسنده : {this.state.blogData[3]?.creator.name}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="h-40">
-              <div className="bg-indigo-500 h-32 w-[90%] drop-shadow-xl mx-1 rounded-lg">
-                6845
-              </div>
-            </div>
-            <div className="h-40">
-              <div className="bg-yellow-300 h-32 w-[90%] drop-shadow-xl mx-1 rounded-lg">
-                6845
-              </div>
-            </div>
+            </Link>
           </Slider>
         </div>
         <div className="absolute bottom-[-25.5px] text-center text-[#c2c2c2] text-[8px] w-screen py-1 bg-[#2e3a3f]">

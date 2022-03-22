@@ -1,7 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { Editor } from "@tinymce/tinymce-react";
 import { useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import Back from "../../Assets/Svgs/Back";
 import Send from "../../Assets/Svgs/Send";
 import Cookies from "universal-cookie";
 
@@ -11,8 +12,8 @@ export default () => {
   const cookies = new Cookies();
   const token = cookies.get("ut");
 
-  const [data, setData] = React.useState("");
-  const [count, setCount] = React.useState(0);
+  const [data, setData] = useState("");
+  const [count, setCount] = useState(0);
   const [titlevalue, setTitlevalue] = useState("");
   const [imgUrlvalue, setimgUrlvalue] = useState("");
 
@@ -64,7 +65,7 @@ export default () => {
             عنوان مقاله
           </label>
           <input
-            className="outline-none rounded border border-[#2e3a3f] mr-2 w-[65vw] md:w-[400px] md:py-2 px-2 py-1 shadow-lg text-right placeholder:text-[10px]  md:placeholder:text-[12px] placeholder:text-right"
+            className="outline-none rounded border text-[#2e3a3f] border-[#2e3a3f] mr-2 w-[55vw] md:w-[400px] md:py-2 px-2 py-1 shadow-lg text-right placeholder:text-[10px]  md:placeholder:text-[12px] placeholder:text-right"
             placeholder="عنوان مقاله خود را اینجا بنویسید ..."
             value={titlevalue}
             onChange={(e) => setTitlevalue(e.target.value)}
@@ -78,7 +79,7 @@ export default () => {
             تصویر مقاله
           </label>
           <input
-            className="outline-none rounded border border-[#2e3a3f] mr-1.5 w-[65vw] md:w-[400px] md:py-2 px-2 py-1 shadow-lg text-right placeholder:text-[10px] md:placeholder:text-[12px] placeholder:text-right"
+            className="outline-none rounded border text-[#2e3a3f] border-[#2e3a3f] mr-1.5 w-[55vw] md:w-[400px] md:py-2 px-2 py-1 shadow-lg text-right placeholder:text-[10px] md:placeholder:text-[12px] placeholder:text-right"
             placeholder="لینک تصویر مقاله خود را وارد کنید ..."
             value={imgUrlvalue}
             onChange={(e) => setimgUrlvalue(e.target.value)}
@@ -95,10 +96,18 @@ export default () => {
       />
       <div
         onClick={() => submitBLog()}
-        className="md:hidden fixed flex justify-center items-center w-14 h-14 bottom-3 right-3 rounded-full shadow-xl bg-[#c2c2c2] cursor-pointer"
+        className=" fixed flex justify-center items-center w-14 h-14 bottom-10 right-3 rounded-full shadow-xl bg-[#c2c2c2] cursor-pointer"
       >
         <Send />
       </div>
+      <Link to="/dashboard">
+        <div
+          // onClick={() => submitBLog()}
+          className=" fixed flex justify-center items-center w-14 h-14 md:top-[95px] md:left-5 top-[65px] left-1 rounded-full shadow-xl bg-[#c2c2c2] cursor-pointer"
+        >
+          <Back />
+        </div>
+      </Link>
     </div>
   );
 };

@@ -56,9 +56,14 @@ export default () => {
                   <p className="mr-[2vw] ml-[20px] ">{i + 1}</p>
                   <p className="mr-[7vw] max-w-[45vw]">{blog.title}</p>
                 </div>
-                <Link to={`blog/${blog._id}`}>
-                  <p className="ml-2 md:ml-3 text-[#fff]">مشاهده</p>
-                </Link>
+                <div className="flex">
+                  <Link to={`editblog/${blog._id}`}>
+                    <p className="ml-2 md:ml-3 text-[#fff]">ادیت</p>
+                  </Link>
+                  <Link to={`blog/${blog._id}`}>
+                    <p className="ml-2 md:ml-3 text-[#fff]">مشاهده</p>
+                  </Link>
+                </div>
               </div>
             );
           })}

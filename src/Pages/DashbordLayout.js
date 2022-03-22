@@ -47,7 +47,7 @@ export default () => {
   if (!userData) return navigate("/");
 
   return (
-    <div className="w-screen h-screen bg-[#2e3a3f]">
+    <div className="w-screen h-screen bg-[#2e3a3f] overflow-x-hidden">
       <Header />
       <Outlet />
     </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LoginBackGround from "../Assets/Img/LoginBackGround.png";
 import Logo from "../Assets/Svgs/Logo";
 import ShowPass from "../Assets/Svgs/ShowPass";
@@ -94,7 +94,7 @@ export default () => {
                 </label>
                 <div
                   onClick={() => togglePassword()}
-                  className="absolute mt-3.5 ml-1.5 md:mt-[1.15rem]"
+                  className="absolute mt-3.5 ml-1.5 md:mt-[1.15rem] cursor-pointer"
                 >
                   <ShowPass color={"#2e3a3f"} />
                 </div>
@@ -107,6 +107,14 @@ export default () => {
                   onChange={(e) => setpassword(e.target.value)}
                 />
               </div>
+            </div>
+            <div className="text-[0.7rem] text-right mr-5 mt-3">
+              <p>
+                حساب کاربری ندارید؟{" "}
+                <Link to="/signup">
+                  <span className="text-black cursor-pointer">عضو شوید</span>
+                </Link>
+              </p>
             </div>
           </div>
 

@@ -1,14 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "~slick-carousel/slick/slick-theme.css";
+@import "~slick-carousel/slick/slick.css";
 
 @font-face {
   font-family: IranSansWeb;
   src: url(./Assets/Fonts/IRANSans-web.ttf);
 }
+
+@font-face {
+  font-family: dana;
+  src: url(./Assets/Fonts/Dana-FaNum-Bold.ttf);
+}
+
 body {
   font-family: IranSansWeb;
 }
 
-@import "~slick-carousel/slick/slick.css";
-@import "~slick-carousel/slick/slick-theme.css";
+.dana {
+  font-family: dana;
+}
+
+.card-shadow {
+  background: linear-gradient(320deg, #2e3a3f, transparent 100%) bottom;
+
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+/* the slides */
