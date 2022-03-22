@@ -13,10 +13,11 @@ import Blog from "./Pages/Blog";
 import WebBlog from "./Pages/WebBlog";
 import EditBlog from "./Pages/EditBlog";
 import EditUser from "./Pages/EditUser";
+import Author from "./Pages/Author";
 
 function App() {
   return (
-    <div className="App">
+    <div className="overflow-hidden">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}>
@@ -24,6 +25,7 @@ function App() {
             <Route path="aboutus" element={<AboutUs />} />
             <Route path="popularauthors" element={<PopularAuthors />} />
             <Route path="blog/:id" element={<WebBlog />} />
+            <Route path="author/:id" element={<Author />} />
           </Route>
           <Route path="signup" element={<SignUp />} />
           <Route path="signin" element={<SignIn />} />

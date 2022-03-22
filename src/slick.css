@@ -1,0 +1,30 @@
+.slick-active {
+  padding: 20px 0;
+}
+
+.slick-center {
+  transform: scale(1.07);
+  transition-duration: 800ms;
+  z-index: 100;
+  position: relative;
+}
+
+.slick-slide:not(.slick-active) {
+  margin: 20px 0;
+}
+
+.child {
+  width: 100%;
+}
+
+.slide:not(.slick-active) {
+  cursor: pointer;
+}
+.imgshadow {
+  box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.151);
+}
+
+.cardshadow {
+  box-shadow: 12px 0 15px -4px rgba(0, 0, 0, 0.5),
+    -12px 0 8px -4px rgba(0, 0, 0, 0.5);
+}

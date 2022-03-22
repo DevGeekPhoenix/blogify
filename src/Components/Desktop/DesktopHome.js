@@ -12,7 +12,6 @@ export default () => {
       changefirstSlideIndex();
     }, 500);
   }, []);
-  console.log(blogs);
 
   let [index, setindex] = useState(0);
   let [firstSlideIndex, setfirstSlideIndex] = useState(0);
@@ -33,14 +32,13 @@ export default () => {
     };
   }, [index]);
 
-  console.log(index);
-
   return (
     <div className="hidden md:flex w-screen h-screen justify-center items-center">
-      <div className="absolute right-[1vw] bottom-[10vh] z-40 w-[40vw] h-[450px] rounded-xl backdrop-blur-lg bg-[#2e3a3faf] shadow-lg shadow-[#2e3a3f]">
-        <div className="text-right  text-[1.3rem] text-[#fff] rounded-xl w-full h-full py-10 p-5 dana transition-all duration-200">
+      <div className="absolute right-[1vw] bottom-[10vh] z-40 w-[40vw] h-[400px] rounded-xl backdrop-blur-lg bg-[#2e3a3faf] shadow-lg shadow-[#2e3a3f]">
+        <div className="text-right  text-[1.3rem] text-[#fff] rounded-xl w-full h-full py-10 p-5 dana">
           <Slider
-            className="w-full h-full mt-9"
+            className="w-full h-full "
+            fade={true}
             pauseOnFocus={false}
             pauseOnDotsHover={false}
             pauseOnHover={false}
@@ -48,7 +46,7 @@ export default () => {
             arrows={false}
             infinite={true}
             autoplay={true}
-            speed={2000}
+            speed={500}
             autoplaySpeed={5000}
           >
             <div
@@ -64,7 +62,7 @@ export default () => {
               </div>
               <p className="text-3xl leading-10 mt-10">{blogs[0]?.title}</p>
               <Link to={`blog/${blogs[0]?._id}`}>
-                <button className="mb-5 border-2 border-[#c2c2c2] rounded-md shadow-lg shadow-[#00000049] hover:bg-[#636363] hover:text-[#fff] text-[#fff] mt-10 py-2 w-full flex justify-center">
+                <button className="mb-5 relative z-10 border-2 border-[#c2c2c2] rounded-md shadow-lg shadow-[#00000049] hover:bg-[#636363] hover:text-[#fff] text-[#fff] mt-10 py-2 w-full flex justify-center">
                   دیدن مقاله
                 </button>
               </Link>
@@ -82,7 +80,7 @@ export default () => {
               </div>
               <p className="text-3xl leading-10 mt-10">{blogs[1]?.title}</p>
               <Link to={`blog/${blogs[1]?._id}`}>
-                <button className="mb-5 border-2 border-[#c2c2c2] rounded-md shadow-lg shadow-[#00000049] hover:bg-[#636363] hover:text-[#fff] text-[#fff] mt-10 py-2 w-full flex justify-center">
+                <button className="mb-5 relative z-10 border-2 border-[#c2c2c2] rounded-md shadow-lg shadow-[#00000049] hover:bg-[#636363] hover:text-[#fff] text-[#fff] mt-10 py-2 w-full flex justify-center">
                   دیدن مقاله
                 </button>
               </Link>
@@ -100,7 +98,7 @@ export default () => {
               </div>
               <p className="text-3xl leading-10 mt-10">{blogs[2]?.title}</p>
               <Link to={`blog/${blogs[2]?._id}`}>
-                <button className="mb-5 border-2 border-[#c2c2c2] rounded-md shadow-lg shadow-[#00000049] hover:bg-[#636363] hover:text-[#fff] text-[#fff] mt-10 py-2 w-full flex justify-center">
+                <button className="mb-5 relative z-10 border-2 border-[#c2c2c2] rounded-md shadow-lg shadow-[#00000049] hover:bg-[#636363] hover:text-[#fff] text-[#fff] mt-10 py-2 w-full flex justify-center">
                   دیدن مقاله
                 </button>
               </Link>
@@ -118,7 +116,7 @@ export default () => {
               </div>
               <p className="text-3xl leading-10 mt-10">{blogs[3]?.title}</p>
               <Link to={`blog/${blogs[3]?._id}`}>
-                <button className="mb-5 border-2 border-[#c2c2c2] rounded-md shadow-lg shadow-[#00000049] hover:bg-[#636363] hover:text-[#fff] text-[#fff] mt-10 py-2 w-full flex justify-center">
+                <button className="mb-5 relative z-10 border-2 border-[#c2c2c2] rounded-md shadow-lg shadow-[#00000049] hover:bg-[#636363] hover:text-[#fff] text-[#fff] mt-10 py-2 w-full flex justify-center">
                   دیدن مقاله
                 </button>
               </Link>

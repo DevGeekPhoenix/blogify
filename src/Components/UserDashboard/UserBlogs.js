@@ -6,7 +6,6 @@ import Cookies from "universal-cookie";
 export default () => {
   const cookies = new Cookies();
   const [userBlogs, setuserBlogs] = useState([]);
-  console.log(userBlogs);
   const token = cookies.get("ut");
   useEffect(() => {
     async function getUserBlogs() {

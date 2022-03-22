@@ -30,8 +30,6 @@ export default () => {
         }),
       })
         .then((data) => {
-          console.log(data);
-          console.log("!!!!");
           return data.json();
         })
         .then(({ token }) => {

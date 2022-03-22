@@ -17,8 +17,6 @@ export default () => {
   const [titlevalue, setTitlevalue] = useState("");
   const [imgUrlvalue, setimgUrlvalue] = useState("");
 
-  console.log(data);
-
   const handleInit = (value, editor) => {
     setCount(charCount(editor));
   };

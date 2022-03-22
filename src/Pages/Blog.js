@@ -6,19 +6,12 @@ export default () => {
   const { id } = useParams();
   // const content = useRef(null);
   const [blog, setblog] = useState(null);
-  console.log(blog);
   useEffect(() => {
     fetch(`http://localhost:4000/blog/${id}`)
       .then((response) => response.json())
       .then((data) => setblog(data));
   }, []);
-  // console.log(JSON.parse(JSON.stringify(blog?.content)));
-  // const parser = new DOMParser();
-  // const doc = parser.parseFromString(blog?.content, "text/html");
-  // console.log(doc.body);
-  // content.firstElementChild = doc.body;
 
-  // console.log(content);
   return (
     <div className=" w-[80vw] m-auto bg-[#fff]">
       <p className="text-center font-bold text-[1rem] md:text-[1.3rem] text-[#2e3a3f] mt-2 px-2 py-4">

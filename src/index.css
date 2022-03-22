@@ -29,4 +29,26 @@ body {
   background-repeat: no-repeat;
 }
 
-/* the slides */
+.swiper {
+  width: 60vw;
+  height: 400px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.authorcardshadow {
+  box-shadow: 12px 0 15px -4px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}

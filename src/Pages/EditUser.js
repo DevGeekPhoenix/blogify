@@ -14,7 +14,6 @@ export default function EditUser() {
   const [name, setname] = useState(userData.name);
 
   const editUser = async () => {
-    console.log("salam salam");
     fetch("http://localhost:4000/user/edit", {
       method: "POST", // or 'PUT'
       headers: {
@@ -28,9 +27,7 @@ export default function EditUser() {
           imgurl: userimg,
         },
       }),
-    }).then(() => {
-      console.log("!!!!");
-    });
+    })
   };
 
   return (

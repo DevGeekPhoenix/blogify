@@ -23,9 +23,8 @@ export default class AsNavFor extends Component {
   }
 
   render() {
-    console.log(this.state.blogData[0]);
     return (
-      <div className="md:hidden w-[100%] relative  ">
+      <div className="md:hidden w-[100%] h-screen relative  ">
         <section className="    ">
           <Slider
             className=""
@@ -46,7 +45,7 @@ export default class AsNavFor extends Component {
                 </Link>
               </div>
               <img
-                className="w-screen h-[98.5vh] object-cover"
+                className="w-screen h-screen mt-[-20px] object-cover"
                 src={this.state.blogData[0]?.imgurl}
               />
             </div>
@@ -59,7 +58,7 @@ export default class AsNavFor extends Component {
                 </Link>
               </div>
               <img
-                className="w-screen h-[98.5vh] object-cover"
+                className="w-screen h-screen mt-[-20px] object-cover"
                 src={this.state.blogData[1]?.imgurl}
               />
             </div>
@@ -72,7 +71,7 @@ export default class AsNavFor extends Component {
                 </Link>
               </div>
               <img
-                className="w-screen h-[98.5vh] object-cover"
+                className="w-screen h-screen mt-[-20px] object-cover"
                 src={this.state.blogData[2]?.imgurl}
               />
             </div>
@@ -85,14 +84,14 @@ export default class AsNavFor extends Component {
                 </Link>
               </div>
               <img
-                className="w-screen h-[98.5vh] object-cover"
+                className="w-screen h-screen mt-[-20px] object-cover"
                 src={this.state.blogData[3]?.imgurl}
               />
             </div>
           </Slider>
         </section>
 
-        <div className="relative mt-[-180px] ">
+        <div className="relative mt-[-220px] ">
           <Slider
             arrows={false}
             infinite={true}
