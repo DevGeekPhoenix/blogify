@@ -45,7 +45,6 @@ export default () => {
       .then((res) => res.json())
       .then((data) => setauthors(data));
   }, []);
-  console.log(authors);
   return (
     <div>
       <div>

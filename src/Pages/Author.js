@@ -36,7 +36,6 @@ export default () => {
   }, []);
   const findauthor = authors.find((author) => author._id === id);
 
-  console.log(blogs);
 
   return (
     <>

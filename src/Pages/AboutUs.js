@@ -9,7 +9,10 @@ export default () => {
         className="w-screen h-screen object-cover absolute z-[-100]"
         src={bg}
       />
-      <div className="w-screen h-screen flex justify-center items-center">
+      <div
+        dir="rtl"
+        className="w-screen h-screen flex justify-center items-center"
+      >
         <div className=" flex flex-col  shadow-xl shadow-[#000000d0] h-[90vh] w-[80vw] md:w-[60vw] md:h-[70vh] rounded-xl mt-10 md:mt-0 backdrop-blur-lg bg-[#2e3a3f98]">
           <div className="flex w-full justify-center my-5">
             <Logo color="#fff" />
